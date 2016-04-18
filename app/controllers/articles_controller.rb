@@ -13,7 +13,6 @@ before_action :require_same_user, only:[:edit, :update, :destroy]
 
 	def create
 		#render plain: params[:article].inspect
-		#debugger
 		@article = Article.new(article_params)
 		@article.user = current_user
 		if @article.save
