@@ -7,7 +7,7 @@ class ListCategoriesTest < ActionDispatch::IntegrationTest
 		@category2 = Category.create(name: "Programming")
 	end
 
-	test "should shoe category listing" do
+	test "should show category listing" do
 		get categories_path
 		assert_template 'categories/index'
 		assert_select "a[href=?]", category_path(@category1), text: @category1.name
